@@ -1,0 +1,42 @@
+{
+  "name": "cordova-plugin-localhelper",
+  "version": "0.0.1",
+  "description": "localhelper",
+  "cordova": {
+    "id": "cordova-plugin-localhelper",
+    "platforms": [
+      "android",
+      "browser"
+    ]
+  },
+  "keywords": [
+    "cordova",
+    "cordova-android",
+    "localhelper",
+    "openFile"
+  ],
+  "engines": [
+    {
+      "name": "cordova-android",
+      "version": ">=4"
+    },
+    {
+      "name": "cordova-plugman",
+      "version": ">=5.2.0"
+    }
+  ],
+  "author": "zhangk",
+  "license": "Apache-2.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "bugs": {
+    "url": ""
+  },
+  "homepage": ""
+}

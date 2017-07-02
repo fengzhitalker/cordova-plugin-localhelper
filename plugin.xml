@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-localhelper" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>LocalHelper</name>
+    <js-module name="localhelper" src="www/LocalHelper.js">
+        <clobbers target="navigator.localhelper" />
+    </js-module>
+    <!-- android -->
+    <platform name="android">
+      <config-file target="res/xml/config.xml" parent="/*">
+        <feature name="LocalHelper">
+          <param name="android-package" value="org.myplugin.cordova.helper.OpenFileLocal"/>
+        </feature>
+      </config-file>
+      <source-file src="src/android/OpenFileLocal.java" target-dir="src/org/myplugin/cordova/helper" />
+    </platform>
+
+    <!-- browser -->
+    <platform name="browser">
+        <config-file target="config.xml" parent="/*">
+            <feature name="LocalHelper">
+                <param name="browser-package" value="LocalHelper" />
+            </feature>
+        </config-file>
+
+        <js-module src="src/browser/OpenFileLocal.js" name="OpenFileLocal">
+            <runs />
+        </js-module>
+    </platform>
+</plugin>
