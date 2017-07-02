@@ -1,6 +1,5 @@
 package org.myplugin.cordova.helper;
 
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -9,9 +8,14 @@ import android.net.Uri;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.tencent.smtt.sdk.QbSdk;
+
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.json.JSONException;
+
+import java.io.File;
+import java.util.HashMap;
 
 /**
  * Created by zhang on 2017/6/28.
@@ -45,10 +49,12 @@ public class OpenFileLocal extends CordovaPlugin {
             Log.d(TAG, "File Uri: " + uri.toString());
             // Get the path
             String path = getPath(this.cordova.getActivity(), uri);
-            openFile(new File(path));
-        }
 
-        Toast.makeText(this.cordova.getActivity(), resultCode, Toast.LENGTH_SHORT).show();
+            HashMap<String, String> params = new HashMap<String, String>();
+            params.put("style", "1");
+            params.put("local", "true");
+            QbSdk.openFileReader(this.cordova.getActivity(), path, params,null);
+        }
     }
 
     public static String getPath(Context context, Uri uri) {
