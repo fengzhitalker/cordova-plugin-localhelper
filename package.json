@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-localhelper",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "localhelper",
   "cordova": {
     "id": "cordova-plugin-localhelper",
